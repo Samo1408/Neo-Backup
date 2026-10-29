@@ -32,7 +32,7 @@ jobs:
       - name: Build release APK
         run: ./gradlew assembleRelease --no-daemon
 
-      - name: Sign APK
+      - name: Sign APK if working
         env:
           KEYSTORE_BASE64: ${{ secrets.SIGNING_KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.SIGNING_KEYSTORE_PASSWORD || 'android' }}
